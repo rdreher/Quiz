@@ -15,42 +15,35 @@ class ViewController: UIViewController {
     @IBOutlet var questionLabel: UILabel!
     @IBOutlet var answerLabel: UILabel!
     
-    // Array of constants
-    let questions: [String] = [
-        "What is 7+7?",
-        "What is the capital of Washington?",
-        "What is cognac made from?"
-    ]
-    //Array of constants
-    let answers: [String] = [
-        "14",
-        "Olympia",
-        "Grapes"
-    ]
-    
+    var quizList: [Quiz] = []
     var currentQuestionIndex: Int = 0
     
     // Set the actions for the methods
     // Drag from the UIButton to the ViewControler
     @IBAction func showNextQuestion(_sender: UIButton) {
         currentQuestionIndex += 1
-        if currentQuestionIndex == questions.count {
+        if currentQuestionIndex == quizList.count {
             currentQuestionIndex = 0
         }
         
-        let question: String = questions[currentQuestionIndex]
+        let question: String = quizList[currentQuestionIndex].question
         questionLabel.text = question
         answerLabel.text = "???"
     }
 
     @IBAction func showAnswer(_sender: UIButton) {
-        let answer: String = answers[currentQuestionIndex]
+        let answer: String = quizList[currentQuestionIndex].answer
         answerLabel.text = answer
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        questionLabel.text = questions[currentQuestionIndex]
+
+        // Initialize our Quiz ModelClass with data
+        quizList.append(Quiz(id: 0, question: "What is 7+7?", answer: "14"))
+        quizList.append(Quiz(id: 1, question: "What is the capital of Washington?", answer: "Olympia"))
+        quizList.append(Quiz(id: 2, question: "What is cognac made from?", answer: "Grapes"))
+        questionLabel.text = quizList[currentQuestionIndex].question
         // Do any additional setup after loading the view, typically from a nib.
     }
 
