@@ -18,13 +18,13 @@ class ViewController: UIViewController {
     // Array of constants
     let questions: [String] = [
         "What is 7+7?",
-        "What is the capital of Texas?",
+        "What is the capital of Washington?",
         "What is cognac made from?"
     ]
     //Array of constants
     let answers: [String] = [
         "14",
-        "Austin",
+        "Olympia",
         "Grapes"
     ]
     
