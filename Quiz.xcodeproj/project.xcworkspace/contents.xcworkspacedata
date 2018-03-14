@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Quiz.xcodeproj">
+      location = "group:../Build">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>

@@ -33,10 +33,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D05F74422059A48C00A9CBFB /* Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Quiz.app; path = "/Users/dreher/Developer/Quiz/build/Release-iphoneos/Quiz.app"; sourceTree = "<absolute>"; };
+		D05F74432059A48C00A9CBFB /* QuizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = QuizTests.xctest; path = "/Users/dreher/Developer/Quiz/build/Debug-iphoneos/QuizTests.xctest"; sourceTree = "<absolute>"; };
+		D05F74442059A48C00A9CBFB /* QuizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = QuizUITests.xctest; path = "/Users/dreher/Developer/Quiz/build/Debug-iphoneos/QuizUITests.xctest"; sourceTree = "<absolute>"; };
 		D08EACE82058BEC500E29F45 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
-		D0D2905020599EE8007884D4 /* Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D0D2905120599EE8007884D4 /* QuizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = QuizTests.xctest; path = "/Users/dreher/Developer/Quiz/build/Debug-iphoneos/QuizTests.xctest"; sourceTree = "<absolute>"; };
-		D0D2905220599EE8007884D4 /* QuizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = QuizUITests.xctest; path = "/Users/dreher/Developer/Quiz/build/Debug-iphoneos/QuizUITests.xctest"; sourceTree = "<absolute>"; };
 		D0D9DDBA1F214AA00012DD04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0D9DDBC1F214AA00012DD04 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D0D9DDBF1F214AA00012DD04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,7 +74,6 @@
 			isa = PBXGroup;
 			children = (
 				D0D9DDB91F214AA00012DD04 /* Quiz */,
-				D0D2905020599EE8007884D4 /* Quiz.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,7 +108,7 @@
 			);
 			name = Quiz;
 			productName = Quiz;
-			productReference = D0D2905020599EE8007884D4 /* Quiz.app */;
+			productReference = D05F74422059A48C00A9CBFB /* Quiz.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D0D9DDCA1F214AA00012DD04 /* QuizTests */ = {
@@ -127,7 +126,7 @@
 			);
 			name = QuizTests;
 			productName = QuizTests;
-			productReference = D0D2905120599EE8007884D4 /* QuizTests.xctest */;
+			productReference = D05F74432059A48C00A9CBFB /* QuizTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		D0D9DDD51F214AA00012DD04 /* QuizUITests */ = {
@@ -145,7 +144,7 @@
 			);
 			name = QuizUITests;
 			productName = QuizUITests;
-			productReference = D0D2905220599EE8007884D4 /* QuizUITests.xctest */;
+			productReference = D05F74442059A48C00A9CBFB /* QuizUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
