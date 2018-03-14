@@ -1,5 +1,5 @@
 ---
-platforms: iOs 
+platforms: iOS 
 author: rdreher 
 language: Swift 
 ---
