@@ -12,11 +12,29 @@ class ViewController: UIViewController {
     
     // Set the output of methods
     // Drag from ViewControler to UILabel
-    @IBOutlet var questionLabel: UILabel!
+    @IBOutlet var currentQuestionLabel: UILabel!
+    @IBOutlet var nextQuestionLabel: UILabel!
     @IBOutlet var answerLabel: UILabel!
     
     var quizList: [Quiz] = []
     var currentQuestionIndex: Int = 0
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Initialize our Quiz ModelClass with data
+        quizList.append(Quiz(id: 0, question: "What is 7+7?", answer: "14"))
+        quizList.append(Quiz(id: 1, question: "What is the capital of Washington?", answer: "Olympia"))
+        quizList.append(Quiz(id: 2, question: "What is cognac made from?", answer: "Grapes"))
+        currentQuestionLabel.text = quizList[currentQuestionIndex].question
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Set the label's initial aplha
+        nextQuestionLabel.alpha = 0
+    }
     
     // Set the actions for the methods
     // Drag from the UIButton to the ViewControler
@@ -27,45 +45,31 @@ class ViewController: UIViewController {
         }
         
         let question: String = quizList[currentQuestionIndex].question
-        questionLabel.text = question
+        nextQuestionLabel.text = question
         answerLabel.text = "???"
         animateLabelTransitions()
     }
-
+    
     @IBAction func showAnswer(_sender: UIButton) {
         let answer: String = quizList[currentQuestionIndex].answer
         answerLabel.text = answer
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Initialize our Quiz ModelClass with data
-        quizList.append(Quiz(id: 0, question: "What is 7+7?", answer: "14"))
-        quizList.append(Quiz(id: 1, question: "What is the capital of Washington?", answer: "Olympia"))
-        quizList.append(Quiz(id: 2, question: "What is cognac made from?", answer: "Grapes"))
-        questionLabel.text = quizList[currentQuestionIndex].question
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     func animateLabelTransitions() {
-        let animationsClosure = { () -> Void in
-            self.questionLabel.alpha = 1
-        }
         // Animate the alpha
-        UIView.animate(withDuration: 0.5, animations: animationsClosure)
+        UIView.animate(withDuration: 0.5,
+           delay: 0,
+           options: [],
+           animations: {
+            self.currentQuestionLabel.alpha = 0
+            self.nextQuestionLabel.alpha = 1
+        },
+           completion: { _ in
+            swap(&self.currentQuestionLabel,
+                 &self.nextQuestionLabel)
+        })
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        // Set the label's initial aplha
-        questionLabel.alpha = 0
-    }
+
 }
 
