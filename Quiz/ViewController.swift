@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         let question: String = quizList[currentQuestionIndex].question
         questionLabel.text = question
         answerLabel.text = "???"
+        animateLabelTransitions()
     }
 
     @IBAction func showAnswer(_sender: UIButton) {
@@ -50,6 +51,21 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func animateLabelTransitions() {
+        let animationsClosure = { () -> Void in
+            self.questionLabel.alpha = 1
+        }
+        // Animate the alpha
+        UIView.animate(withDuration: 0.5, animations: animationsClosure)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Set the label's initial aplha
+        questionLabel.alpha = 0
     }
 }
 
